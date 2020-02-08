@@ -39,7 +39,7 @@
     "user": "explorer_user",
     "password": "explorer_password",
     "database": "explorer2",
-    "address": "mongo",
+    "address": "127.0.0.1",
     "port": 27017
   },
 
@@ -49,7 +49,7 @@
 
   // wallet settings
   "wallet": {
-    "host": "pigeon",
+    "host": "127.0.0.1",
     "port": 8756,
     "user": "rpc_user",
     "pass": "rpc_password"
