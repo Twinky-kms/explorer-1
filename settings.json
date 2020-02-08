@@ -7,10 +7,7 @@
   // name your instance!
   "title": "Pigeoncoin",
 
-  // root is "", /explorer is "/explorer"
-  "subpath": "",
-
-  "address": "127.0.0.1",
+  "address": "127.0.0.1:3001",
 
   // coin name
   "coin": "Pigeoncoin",
@@ -18,7 +15,7 @@
   // coin symbol
   "symbol": "PGN",
 
-  // logo, do not include subpath
+  // logo
   "logo": "/images/logo.png",
 
   // favicon
@@ -29,7 +26,7 @@
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
   //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Pigeoncoin",
+  "theme": "Cyborg",
 
   // port to listen for requests on.
   "port" : 3001,
@@ -39,17 +36,20 @@
     "user": "explorer_user",
     "password": "explorer_password",
     "database": "explorer2",
-    "address": "127.0.0.1",
+    "address": "localhost",
     "port": 27017
   },
 
   //update script settings
   "update_timeout": 10,
   "check_timeout": 250,
+  "block_parallel_tasks": 1,
 
   // wallet settings
+  "use_rpc": false,
+
   "wallet": {
-    "host": "127.0.0.1",
+    "host": "localhost",
     "port": 8756,
     "user": "rpc_user",
     "pass": "rpc_password"
@@ -63,28 +63,28 @@
 
   // menu settings
   "display": {
-    "api": false,
-    "markets": false,
+    "api": true,
+    "markets": true,
     "richlist": true,
     "twitter": true,
     "facebook": false,
     "googleplus": false,
+    "youtube": false,
     "search": true,
     "movement": true,
-    "network": true,
-    "notice":{
-      "show":false,
-      "address":"https://github.com/Pigeoncoin/pigeoncoin/releases/tag/v0.15.99.3",
-      "text":"LWMA algorithm change by July 27th, upgrade your wallet to v15.99.3",
-      "color":"#23d160"
-    },
+    "network": true
   },
 
   // index page (valid options for difficulty are POW, POS or Hybrid)
   "index": {
     "show_hashrate": true,
+    // Show Market Cap in header
+    "show_market_cap": false,
+    // Show Market Cap in place of price box
+    "show_market_cap_over_price": false,
     "difficulty": "POW",
-    "last_txs": 100
+    "last_txs": 100,
+    "txs_per_page": 10
   },
 
   // ensure links on API page are valid
@@ -96,15 +96,15 @@
   },
 
   // market settings
-  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex, cryptobridge (price widget only)
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "PGN",
+    "coin": "JBS",
     "exchange": "BTC",
-    "enabled": ["cryptobridge"],
+    "enabled": ["bittrex"],
     "cryptopia_id": "1658",
     "ccex_key" : "Get-Your-Own-Key",
-    "default": "cryptobridge"
+    "default": "bittrex"
   },
 
   // richlist/top100 settings
@@ -135,8 +135,12 @@
   //heavy (enable/disable additional heavy features)
   "heavy": false,
 
+  //disable saving blocks & TXs via API during indexing.
+  "lock_during_index": false,
+
   //amount of txs to index per address (stores latest n txs)
   "txcount": 100,
+  "txcount_per_page": 50,
 
   //show total sent & received on address page (set false if PoS)
   "show_sent_received": true,
