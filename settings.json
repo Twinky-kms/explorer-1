@@ -43,10 +43,10 @@
   //update script settings
   "update_timeout": 10,
   "check_timeout": 250,
-  "block_parallel_tasks": 1,
+  "block_parallel_tasks": 3,
 
   // wallet settings
-  "use_rpc": false,
+  "use_rpc": true,
 
   "wallet": {
     "host": "localhost",
