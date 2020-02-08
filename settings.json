@@ -51,8 +51,8 @@
   "wallet": {
     "host": "localhost",
     "port": 8756,
-    "user": "rpc_user",
-    "pass": "rpc_password"
+    "username": "rpc_user",
+    "password": "rpc_password"
   },
 
   // confirmations
