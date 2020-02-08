@@ -38,7 +38,7 @@
   "dbsettings": {
     "user": "explorer_user",
     "password": "explorer_password",
-    "database": "explorer_database",
+    "database": "explorer2",
     "address": "mongo",
     "port": 27017
   },
