@@ -60,7 +60,7 @@ script.
             amount = amount.toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
             //- $("td:eq(2)", row).html(amount).addClass("info");
           }
-        } else if (out > 0 && !justSent) {
+        } else if (out > 0 && justSent) {
           amount = (out / 100000000).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
           updown = "+";
           rowclass = "success";
