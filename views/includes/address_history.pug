@@ -61,9 +61,9 @@ script.
             //- $("td:eq(2)", row).html(amount).addClass("info");
           }
         } else if (out > 0) {
-          //amount = (out / 100000000).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
-          //updown = "+";
-          //rowclass = "success";
+          amount = (out / 100000000).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
+          updown = "+";
+          rowclass = "success";
           //- $("td:eq(2)", row).html("+" + amount).addClass("success");
         } else {
           amount = (vin / 100000000).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
