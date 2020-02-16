@@ -1,5 +1,6 @@
 script.
   var hashAddress = "#{address.a_id}";
+  var justSent = true;
   var setting_maxTxCount = parseInt("#{settings.txcount}");
   var setting_txPerPage = parseInt("#{settings.txcount_per_page}");
   var lengthMenuOpts = [];
@@ -59,7 +60,7 @@ script.
             amount = amount.toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
             //- $("td:eq(2)", row).html(amount).addClass("info");
           }
-        } else if (out > 0) {
+        } else if (out > 0 && !justSent) {
           amount = (out / 100000000).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true});
           updown = "+";
           rowclass = "success";
